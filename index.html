@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>JINAN UNIVERSITY | Interview Practice</title>
+
+  <meta name="description"
+    content="Japanese N5 University Interview Practice with Furigana, Nepali Translation, Voice and Progress Tracking.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="hero">
+
+    <nav class="navbar">
+      <div class="logo">
+        🎓 JINAN INTERVIEW
+      </div>
+
+      <button id="themeToggle" class="theme-btn"
+        aria-label="Toggle dark mode">
+        🌙
+      </button>
+    </nav>
+
+    <div class="hero-content">
+
+      <div class="badge">
+        JAPANESE N5 INTERVIEW PRACTICE
+      </div>
+
+      <h1>
+        暨南大学日本学院
+        <span>入学面接練習</span>
+      </h1>
+
+      <p class="hero-reading">
+        にゅうがく めんせつ れんしゅう
+      </p>
+
+      <p class="hero-subtitle">
+        Japanese University Interview Preparation
+      </p>
+
+      <div class="student-card">
+        <div class="avatar">👨‍🎓</div>
+
+        <div>
+          <small>STUDENT NAME</small>
+          <h2>YADAV SURENDRA KUMAR</h2>
+          <p>🇳🇵 Nepal | Japanese N5 Practice</p>
+        </div>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- DASHBOARD -->
+    <section class="dashboard">
+
+      <div class="stat-card">
+        <div class="stat-icon">📚</div>
+        <h3 id="totalQuestions">30</h3>
+        <p>Total Questions</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">✅</div>
+        <h3 id="completedCount">0</h3>
+        <p>Completed</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <h3 id="importantCount">0</h3>
+        <p>Important</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <h3 id="progressPercent">0%</h3>
+        <p>Progress</p>
+      </div>
+
+    </section>
+
+
+    <!-- PRACTICE PANEL -->
+    <section class="practice-panel">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">INTERVIEW TRAINING</span>
+          <h2>📚 面接練習</h2>
+        </div>
+      </div>
+
+      <p class="instruction">
+        質問(しつもん)を読(よ)んで、
+        🔊ボタンで日本語(にほんご)を聞(き)いてください。
+      </p>
+
+      <p class="nepali-instruction">
+        पहिले प्रश्न पढ्नुहोस्।
+        🔊 थिचेर जापानी उच्चारण सुन्नुहोस्।
+        त्यसपछि आफैँ बोल्ने अभ्यास गर्नुहोस्।
+      </p>
+
+      <!-- SEARCH -->
+      <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="質問を検索 / प्रश्न खोज्नुहोस्..."
+          aria-label="Search interview questions"
+        >
+
+      </div>
+
+      <!-- PROGRESS -->
+      <div class="progress-header">
+        <span>練習済み / अभ्यास पूरा</span>
+        <strong id="progressText">0 / 30</strong>
+      </div>
+
+      <div class="progress-track">
+        <div id="progressBar" class="progress-fill"></div>
+      </div>
+
+      <!-- FILTER BUTTONS -->
+      <div class="filter-buttons">
+
+        <button class="filter-btn active" data-filter="all">
+          📚 All Questions
+        </button>
+
+        <button class="filter-btn" data-filter="important">
+          ⭐ Important
+        </button>
+
+        <button class="filter-btn" data-filter="remaining">
+          ⏳ Remaining
+        </button>
+
+        <button class="filter-btn" data-filter="completed">
+          ✅ Completed
+        </button>
+
+      </div>
+
+      <div class="action-buttons">
+
+        <button id="randomBtn" class="action-btn">
+          🔀 Random Question
+        </button>
+
+        <button id="resetBtn" class="action-btn outline">
+          🔄 Reset Progress
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT NOTICE -->
+    <section class="important-box">
+
+      <h2>⭐ 重要な質問（महत्त्वपूर्ण प्रश्न）</h2>
+
+      <p>
+        ⭐ भएका प्रश्नहरू धेरै अभ्यास गर्नुहोस्।
+      </p>
+
+      <p>
+        🔊 थिचेर जापानी उच्चारण सुन्नुहोस्।
+      </p>
+
+      <p>
+        🎙️ थिचेर आफ्नो आवाज रेकर्ड गरेर सुन्नुहोस्।
+      </p>
+
+      <p>
+        उत्तर याद भएपछि आफैँ बोल्ने प्रयास गर्नुहोस्।
+      </p>
+
+    </section>
+
+
+    <!-- QUESTION LIST -->
+    <section class="questions-section">
+
+      <div class="questions-title">
+        <h2>📝 Interview Questions</h2>
+        <span id="visibleCount">30 Questions</span>
+      </div>
+
+      <div id="questionsContainer"></div>
+
+      <p id="emptyMessage" class="empty-message" hidden>
+        कुनै प्रश्न भेटिएन।
+      </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <h3>🎓 JINAN UNIVERSITY INTERVIEW</h3>
+
+      <p>
+        Japanese N5 Interview Preparation
+      </p>
+
+      <p>
+        Japanese • Furigana • Nepali
+      </p>
+
+      <div class="footer-line"></div>
+
+      <p>
+        © 2026 ROSHAN BK. All Rights Reserved.
+      </p>
+
+      <small>
+        Independent interview practice project.
+      </small>
+
+    </footer>
+
+  </main>
+
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top">
+    ↑
+  </button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
